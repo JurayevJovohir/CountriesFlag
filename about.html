@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Single page</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -33,7 +33,7 @@
                     <div class="row">
                         <div class="pt-5">
                             <a class="text-decoration-none texts py-2 px-3 card-mode rounded" href="./index.html">
-                                <img src="./images/172489_left_icon.svg" alt="Back logo" height="27">
+                                <img  src="./images/172489_left_icon.svg" alt="Back logo" height="27">
                                 Back
                             </a>
                         </div>
@@ -44,39 +44,62 @@
 
         <section>
             <div class="container">
-                <div class="row mt-5">
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 me-auto">
-                        <img class="rounded" src="./images/Belgium.png" alt="Belgium" width="560" height="380">
+                <div class="row mt-5 d-flex align-items-center">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 text-center mb-3">
+                        <img class="rounded country-img" src="./images/what-is-the-404-not-found-error.png" alt="Belgium">
                     </div>
 
-                    <div class="row col-12 col-sm-12 col-md-6 col-lg-6 ms-2">
-                        <div class="col-5 pt-5 me-auto">
+                    <div class="row col-sm-12 col-md-12 col-lg-12 col-xl-6 d-flex align-items-center">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
                             <h3 class="fw-bold mb-4 texts">Belgium</h3>
-                            <p class="texts"><strong>Native Name:</strong> België</p>
-                            <p class="texts"><strong>Population:</strong> 11,319,511</p>
-                            <p class="texts"><strong>Region:</strong> Europe</p>
-                            <p class="texts"><strong>Sub Region:</strong> Western Europe</p>
-                            <p class="texts"><strong>Capital:</strong> Brussels</p>
+                            <div class="d-flex ">
+                                <strong>Native Name:</strong>
+                                <p id="country-name" class="texts ms-1">België</p>
+                            </div>
+                            <div class="d-flex">
+                                <strong>Population:</strong>
+                                <p id="country-population" class="texts ms-1">11,319,511</p>
+                            </div>
+                            <div class="d-flex">
+                                <strong>Region:</strong>
+                                <p id="country-region" class="texts ms-1">Europe</p>
+                            </div>
+                            <div class="d-flex">
+                                <strong>Sub Region:</strong>
+                                <p id="country-sub-region" class="texts ms-1">Western Europe</p>
+                            </div>
+                            <div class="d-flex">
+                                <strong>Capital:</strong>
+                                <p id="country-capital" class="texts ms-1">Brussels</p>
+                            </div>
                         </div>
-                        <div class=" col-12 col-sm-12 col-md-6 col-lg-6 pt-5 texts">
-                            <p class="mt-5"><strong>Top Level Domain:</strong> .be</p>
-                            <p class="texts"><strong>Currencies:</strong> Euro</p>
-                            <p class="texts"><strong>Languages:</strong> Dutch,French,German</p>
+                        <div class="col-sm-12 col-md-6 col-lg-6  texts">
+                            <div class="d-flex">
+                                <strong>Top Level Domain:</strong>
+                                <p id="country-domain" class="texts ms-1"> .be</p>
+                            </div>
+                            <div class="d-flex">
+                                <strong>Currencies:</strong>
+                                <p id="country-currenc" class="texts ms-1"> Euro</p>
+                            </div>
+                            <div class="d-flex">
+                                <strong>Languages:</strong>
+                                <p id="country-languages" class="texts ms-1"> Dutch,French,German</p>
+                            </div>            
                         </div>
 
-                        <div class="mt-4 col-12 col-sm-12 col-md-6 col-lg-12">
-                            <p class="d-inline-block fw-bold texts col-12 col-sm-12 col-md-6 col-lg-3 me-2">Border Countries:</p>
-                            <button class="py-1 px-4 border-0 card-mode texts">France</button>
-                            <button class="py-1 px-4 border-0 ms-2 card-mode texts">Germany</button>
-                            <button class="py-1 px-4 border-0 ms-2 card-mode texts">Netherlands</button>
+                        <div class="mt-4 ">
+                            <p class="d-inline-block fw-bold texts me-2">Border Countries:</p>
+                            <button id="country-borders" class="py-1 px-4 border-0 card-mode texts">France</button>
                         </div>
                     </div>
-                    <div></div>
                 </div>
             </div>
         </section>
     </main>
     <script src="./js/bootstrap.js"></script>
+    <script src="./js/utils/dark-mode.js"></script>
+    <script src="./js/about.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

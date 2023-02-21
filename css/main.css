@@ -21,3 +21,9 @@ body{
 .texts{
     color: var(--texts-color);
 }
+
+.country-img{
+    width: 100%;
+    max-width: 560px;
+    height: 380px;
+}

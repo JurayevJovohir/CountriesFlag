@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -32,23 +32,27 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 me-auto">
                         <div class="input-group mb-3">
-                            <span class="input-group-text d-flex card-mode border-dark" id="basic-addon1">
-                                <img src="./images/search.svg" alt="Search">
-                            </span>
-                            <input type="text" class="form-control card-mode border-dark"
-                                placeholder="Search for a country..." aria-label="Search for a country..."
+                            <form id="js-form" class="d-flex ">
+                                <span class="input-group-text d-flex card-mode border-dark" id="basic-addon1">
+                                    <img src="./images/search.svg" alt="Search">
+                                </span>
+                                <input id="countries-input" type="text" class="form-control card-mode border-dark"
+                                placeholder="Search for a country..." 
+                                aria-label="Search for a country..."
                                 aria-describedby="basic-addon1">
+                            </form>
                         </div>
                     </div>
 
                     <div class="col-6 col-sm-5 col-md-5 col-lg-2">
-                        <select class="form-select border-dark card-mode texts" aria-label="Default select example">
-                            <option class="texts" selected>Filter by Region</option>
-                            <option class="texts" value="1">Africa</option>
-                            <option class="texts" value="2">America</option>
-                            <option class="texts" value="3">Asia</option>
-                            <option class="texts" value="4">Europe</option>
-                            <option class="texts" value="5">Oceania</option>
+                        <select id="select" class="form-select border-dark card-mode texts" aria-label="Default select example">
+                            <option class="texts"selected disabled>Filter by Region</option>
+                            <option class="texts" value="all">All</option>
+                            <option class="texts" value="africa">Africa</option>
+                            <option class="texts" value="americas">America</option>
+                            <option class="texts" value="asia">Asia</option>
+                            <option class="texts" value="europe">Europe</option>
+                            <option class="texts" value="oceania">Oceania</option>
                         </select>
                     </div>
                 </div>
@@ -57,124 +61,48 @@
 
         <section>
             <div class="container">
-                <div class="row gy-5 gx-5   ">
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Germany.png" class="card-img-top" alt="Germany" height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Germany</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 81,770,900</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Europe</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Berlin</p>
-                                </div>
-                            </a>
+                <div class="d-none">
+                    <img src="./images/what-is-the-404-not-found-error.png" alt="Not Found 404">
+                </div>
+                <div id="parent" class="row gy-5 gx-5">
+                    <template id="country-template">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card card-mode">
+                                <a class="text-decoration-none link" >
+                                    <img src="" class="card-img-top" alt="" height="170">
+                                    <div class="card-body">
+                                        <h5 class="card-title fw-bold mb-3 texts">Germany</h5>
+                                        <div class="d-flex">
+                                            <strong class="me-1">Population:</strong>
+                                            <p id="population" class="card-text mb-1 texts">81,770,900</p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <strong class="me-1">Region:</strong>
+                                            <p id="region" class="card-text mb-1 texts">Europe</p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <strong class="me-1">Capital:</strong>
+                                            <p id="capital" class="card-text mb-1 texts"> Berlin</p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <strong class="me-1">Temperature</strong>
+                                            <p id="temp" class="card-text mb-1 texts"> Berlin</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/USA.png" class="card-img-top" alt="USA" height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">United States of America</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 323,947,000</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Americas</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Washington, D.C.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Brazil.png" class="card-img-top" alt="Brazil" height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Brazil</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 206,135,893</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Americas</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Brasília</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Iceland.png" class="card-img-top" alt="Iceland" height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Iceland</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 334,300</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Europe</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Reykjavík</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Afghanistan.png" class="card-img-top" alt="Afghanistan" height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Afghanistan</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 27,657,145</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Asia</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Kabul</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Aland Islands.png" class="card-img-top" alt="Aland Icelands"
-                                    height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Aland Islands</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 28,875</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Europe</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Mariehamn</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Alabania.png" class="card-img-top" alt="Albania" height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Albania</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 2,886,026</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Europe</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Tirana</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3">
-                        <div class="card card-mode">
-                            <a class="text-decoration-none" href="./about.html" target="_blank">
-                                <img src="./images/Algeria'.png" class="card-img-top" alt="Algeria  " height="170">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold mb-3 texts">Algeria</h5>
-                                    <p class="card-text mb-1 texts"><strong>Population:</strong> 40,400,000</p>
-                                    <p class="card-text mb-1 texts"><strong>Region:</strong> Africa</p>
-                                    <p class="card-text mb-1 texts"><strong>Capital:</strong> Algiers</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    </template>
                 </div>
             </div>
         </section>
     </main>
-    <script src="./js/bootstrap.js"></script>
+    <script src="./js/bootstrap/bootstrap.js"></script>
+    <script src="./js/utils/dark-mode.js"></script>
+    <script src="./js/utils/findElement.js"></script>
+    <script src="./js/utils/filter.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/about.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
