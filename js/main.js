@@ -35,7 +35,7 @@ const renderCountry = (array, parent = elParent) => {
         population.textContent = element.population > 1000000 
         ? Math.floor(element.population / 1000000) + ' mln'
         : element.population + ' kishi';
-        
+
         region.textContent = element.continents;
         capital.textContent = element.capital;
 
@@ -74,5 +74,4 @@ fetch('https://restcountries.com/v3.1/all')
     .then((data) => {
         countries = data
         renderCountry(countries)
-
-    });
+    });x    
